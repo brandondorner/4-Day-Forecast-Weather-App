@@ -4,8 +4,6 @@ import Weather from './Weather'
 
 function App() {
 
-  
-  const [results, setResults] = useState({});
   const [zip, setZip] = useState(['']);
   const [query, setQuery] = useState('70037')
   const [city, setCity] = useState('')
@@ -25,8 +23,6 @@ function App() {
   const [day4Weather , setDay4Weather] = useState([])
 
 
-  
-
   useEffect(() => {
   const retrieveResults = async () => {
     const response = await fetch (`http://api.openweathermap.org/data/2.5/forecast?zip=${query},us&APPID=f143ffd16d6f62d6220af4584c60c90a`)
@@ -37,7 +33,6 @@ function App() {
       return
     }
 
-    setResults(data.list)
     setCity(data.city.name)
     setDate(data.list[0].dt_txt)
 
@@ -52,18 +47,14 @@ function App() {
     setDay3Weather(data.list[16].weather[0].description)
 
     setDay4(data.list[24].main)
-    setDay4Weather(data.list[24].weather[0].description)
-
-    console.log(results)
-    console.log(data)
-
-    
+    setDay4Weather(data.list[24].weather[0].description) 
   }
 
     retrieveResults()
   
   },[query]);
 
+  //changing search results
 
   const zipChange = (e) => {
     setZip(e.target.value)
@@ -75,8 +66,6 @@ function App() {
     setZip('')
   }
 
-  
- 
 
   return (
     <div className="App">
@@ -96,7 +85,6 @@ function App() {
       </form>
       <div className="results">
         <Weather
-          list = {results.cod}
           city={city}
           date={date}
           currentId={currentId}
@@ -108,7 +96,6 @@ function App() {
           day2Weather = {day2Weather}
           day3Weather = {day3Weather}
           day4Weather = {day4Weather}
-
         />
       </div>
     </div>
