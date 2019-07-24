@@ -9,9 +9,11 @@ function App() {
   const [zip, setZip] = useState(['']);
   const [query, setQuery] = useState('70037')
   const [city, setCity] = useState('')
+  const [date, setDate] = useState('')
 
   const [currentDate, setCurrentDate] = useState([''])  
   const [currentWeather, setCurrentWeather] = useState([])
+  const [currentId, setCurrentId] = useState('')
 
   const [day2, setDay2] = useState([''])
   const [day2Weather , setDay2Weather] = useState([])
@@ -34,9 +36,11 @@ function App() {
     let data = await response.json()
     setResults(data.list)
     setCity(data.city.name)
+    setDate(data.list[0].dt_txt)
 
     setCurrentDate(data.list[0].main)
     setCurrentWeather(data.list[0].weather[0].description)
+    setCurrentId(data)
 
     setDay2(data.list[8].main)
     setDay2Weather(data.list[8].weather[0].description)
@@ -93,6 +97,8 @@ function App() {
         <Weather
           list = {results.cod}
           city={city}
+          date={date}
+          currentId={currentId}
           currentWeather = {currentWeather}
           currentDate = {currentDate}
           day2 = {day2}

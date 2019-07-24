@@ -4,4 +4,7 @@
   align-items: center;
   flex-direction: column;
   widows: auto;
+  background-color: #86B9E0;
+  height: 100%;
+  width: 100%;
 }
