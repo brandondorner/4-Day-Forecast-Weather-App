@@ -2,7 +2,7 @@ import React from 'react';
 import './Weather.css'
 
 function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weather,
-    day4Weather, day5Weather,currentDate, day2, day3, day4, day5}){
+    day4Weather,currentDate, day2, day3, day4,}){
 
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -119,24 +119,7 @@ function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weath
                         {Math.round(((day4.temp -273.15)* 9/5 + 32)*1.1)}°
                     </div>
                 </div>
-                <div className='border'/>
-                <div className='day5'>
-                    <div className='future-date'>
-                        {FutureDate(3)}
-                    </div>
-                    <div className="icon">
-                        <img src={Icons(currentId ? currentId.list[32].weather[0].icon : null)}  alt='' />
-                    </div>
-                    <div className='weather-description'>
-                        {(day5Weather.toString().split(' ').map( word => 
-                            word.charAt(0).toUpperCase() + word.slice(1)
-                            )).join(' ')}
-                    </div>
-                    <div className='minmax'>
-                        {Math.round(((day5.temp -273.15)* 9/5 + 32)*.90)}° | { }
-                        {Math.round(((day5.temp -273.15)* 9/5 + 32)*1.1)}°
-                    </div>
-                </div>
+                
 
             </div>
         </div>

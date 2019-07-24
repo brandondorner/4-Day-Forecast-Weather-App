@@ -24,9 +24,6 @@ function App() {
   const [day4, setDay4] = useState([''])
   const [day4Weather , setDay4Weather] = useState([])
 
-  const [day5, setDay5] = useState([''])
-  const [day5Weather , setDay5Weather] = useState([])
-
 
   
 
@@ -34,6 +31,12 @@ function App() {
   const retrieveResults = async () => {
     const response = await fetch (`http://api.openweathermap.org/data/2.5/forecast?zip=${query},us&APPID=f143ffd16d6f62d6220af4584c60c90a`)
     let data = await response.json()
+
+    if (data.list === undefined){
+      alert('Please Enter A Valid U.S. Zip Code')
+      return
+    }
+
     setResults(data.list)
     setCity(data.city.name)
     setDate(data.list[0].dt_txt)
@@ -51,15 +54,14 @@ function App() {
     setDay4(data.list[24].main)
     setDay4Weather(data.list[24].weather[0].description)
 
-    setDay5(data.list[30].main)
-    setDay5Weather(data.list[30].weather[0].description)
     console.log(results)
     console.log(data)
 
     
   }
 
-  retrieveResults()
+    retrieveResults()
+  
   },[query]);
 
 
@@ -80,13 +82,12 @@ function App() {
     <div className="App">
       <div className='local-weather'>
         Local Weather
-        <div>
-        </div>
       </div>
       <form className='form' onSubmit={onSubmitForm}>
         <input 
           onChange={zipChange} 
-          type='number' 
+          type='text' 
+          pattern="[0-9]*"
           value={zip}
           placeholder='Zip Code' 
           className='zip'
@@ -104,11 +105,9 @@ function App() {
           day2 = {day2}
           day3 ={day3}
           day4 ={day4}
-          day5 = {day5}
           day2Weather = {day2Weather}
           day3Weather = {day3Weather}
           day4Weather = {day4Weather}
-          day5Weather = {day5Weather}
 
         />
       </div>

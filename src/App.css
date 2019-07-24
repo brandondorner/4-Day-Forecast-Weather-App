@@ -4,7 +4,23 @@
   align-items: center;
   flex-direction: column;
   widows: auto;
-  background-color: #86B9E0;
-  height: 100%;
-  width: 100%;
+  width:auto;
+  height: 100vh;
 }
+
+.zip{
+  padding-left: 5px;
+  font-family: 'Varela Round', "Helvetica Neue" sans-serif;
+  color: blue;
+}
+.submit{
+  font-family: 'Varela Round', "Helvetica Neue" sans-serif;
+}
+
+.local-weather{
+  font-size: 4vh;
+}
+
+
+
+/* 117AAE do a bottom to top gradient with this color maybe lighter */

@@ -3,6 +3,10 @@ body {
   font-family: 'Darker Grotesque', "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #86B9E0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 code {
