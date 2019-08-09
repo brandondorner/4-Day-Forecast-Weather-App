@@ -4,7 +4,6 @@ import './Weather.css'
 function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weather,
     day4Weather,currentDate, day2, day3, day4,}){
 
-    //setting up date arrays
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     date= new Date(date);
@@ -28,7 +27,10 @@ function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weath
     //img src
     const Icons = (imgID) => {
         return `http://openweathermap.org/img/wn/${imgID}@2x.png`
-    }     
+    }
+
+
+        
 
     return (
         <div className='weather'>
@@ -117,6 +119,8 @@ function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weath
                         {Math.round(((day4.temp -273.15)* 9/5 + 32)*1.1)}°
                     </div>
                 </div>
+                
+
             </div>
         </div>
     )
