@@ -1,15 +1,18 @@
 {
   "name": "geo-weather",
   "version": "0.1.0",
+  "engines": {
+    "npm" : "6.10.1",
+    "node":"10.16.0"
+  },
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "serve": "^10.0.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "serve",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
