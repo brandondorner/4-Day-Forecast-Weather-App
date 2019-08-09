@@ -4,6 +4,7 @@ body {
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #86B9E0;
+  background-image: linear-gradient(to top, #117AAE, #86B9E0);
   height: 100%;
   width: 100%;
   overflow-x: hidden;
