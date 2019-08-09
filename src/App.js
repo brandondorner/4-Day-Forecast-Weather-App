@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
   const retrieveResults = async () => {
-    const response = await fetch (`http://api.openweathermap.org/data/2.5/forecast?zip=${query},us&APPID=f143ffd16d6f62d6220af4584c60c90a`)
+    const response = await fetch (`https://api.openweathermap.org/data/2.5/forecast?zip=${query},us&APPID=f143ffd16d6f62d6220af4584c60c90a`)
     let data = await response.json()
 
     if (data.list === undefined){

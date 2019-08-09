@@ -26,7 +26,7 @@ function Weather({city, date, currentWeather, currentId,  day2Weather, day3Weath
 
     //img src
     const Icons = (imgID) => {
-        return `http://openweathermap.org/img/wn/${imgID}@2x.png`
+        return `https://openweathermap.org/img/wn/${imgID}@2x.png`
     }
 
 
