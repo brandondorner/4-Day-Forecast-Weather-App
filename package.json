@@ -1,6 +1,7 @@
 {
   "name": "geo-weather",
   "version": "0.1.0",
+  "homepage": "http://mywebsite.com/relativepath",
   "engines": {
     "node": "10.16.0"
   },
